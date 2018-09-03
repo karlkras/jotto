@@ -1,0 +1,15 @@
+{
+    "extends": "airbnb",
+    "globals": {
+        "test": true,
+        "describe": true,
+        "document": true,
+        "it": true,
+        "expect": true,
+        "beforeEach": true
+    },
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/prefer-stateless-function": [0, { "ignorePureComponents": true }]
+    }
+}
