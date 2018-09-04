@@ -14,23 +14,35 @@ import Input from './';
 const setup = (initialState={}) => {
   const store = storeFactory(initialState);
   const wrapper = shallow(<Input store={store}/>).dive();
+  
+  console.log(wrapper.debug());
 
   return wrapper;
 };
 
+/* global expect */
 describe('Input', () => {
     describe('renders', () => {
         describe('word has not been guessed', () => {
+            let wrapper;
+            beforeEach(() => {
+                const initialState = { success: false };
+                wrapper = setup(initialState);
+            });
+            
             test('renders component without errors', () => {
-                
+                const inputComponent = findByTestAttr(wrapper, 'component-input');
+                expect(inputComponent.length).toBe(1);
             });
             
             test('renders the input box', () => {
-                
+                const inputBox = findByTestAttr(wrapper, 'input-box');
+                expect(inputBox.length).toBe(1);
             });
             
             test('renders the submit button', () => {
-                
+                const submitButton = findByTestAttr(wrapper, 'submit-button');
+                expect(submitButton.length).toBe(1);
             });
         });
         
