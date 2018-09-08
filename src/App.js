@@ -11,7 +11,7 @@ class App extends Component {
         <h1>Joto</h1>
         <Congrats success={true} />
         <GuessedWords guessedWords={[
-          { guessedWord: 'train', letterMatchhCount: 3 }
+          { guessedWord: 'train', letterMatchCount: 3 }
         ]}/>
       </div>
     );

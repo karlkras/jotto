@@ -11,7 +11,7 @@ export default (state=false, action) => {
             state=true;
             break;
         default:
-            state=false;
+             //nothing to do.
     }
     return state;
 };
