@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import checkPropTypes from 'check-prop-types';
 import rootReducer from '../src/reducers';
+import { middleWares } from '../src/configeStore'
 
 
 /**
@@ -13,7 +13,9 @@ import rootReducer from '../src/reducers';
  * @returns {Store} - Redux store
  */
 export const storeFactory = (initialState) => {
-    return createStore(rootReducer, initialState);
+    const createStoreWithMiddleware = applyMiddleware(...middleWares)(createStore);
+
+    return createStoreWithMiddleware(rootReducer);
 };
 
 /**

@@ -8,7 +8,7 @@ const GuessedWords = ({ guessedWords }) => {
                 {item.guessedWord}
             </td>
             <td>
-                {item.letterMatchhCount}
+                {item.letterMatchCount}
             </td>
         </tr>
     );
